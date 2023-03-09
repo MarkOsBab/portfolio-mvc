@@ -18,7 +18,7 @@ Levanta los contenedores de Docker ejecuta el comando ``` docker-compose up ```.
 * technician_test-phpmyadmin: Despliegue de las tablas.
 * technician_test-mysql: Servidor de mysql para levantar la base de datos.
 
-Todos los puertos se pueden modificar en el archivo [docker-compose.yml](https://github.com/MarkOsBab/technician-test-quickdrink.git/docker-compose.yml)
+Todos los puertos se pueden modificar en el archivo [docker-compose.yml](https://github.com/MarkOsBab/technician-test-quickdrink/blob/main/docker-compose.yml)
 
 Actualiza todos los paquetes de la aplicación. Dentro del contenedor de la aplicación correspondiente a la API ejecuta el comando ``` docker-compose exec app php artisan composer update ```
 
