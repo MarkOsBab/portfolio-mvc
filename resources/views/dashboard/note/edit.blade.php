@@ -11,8 +11,6 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="mt-4">
                             <h1>Edit note: {{$note->title}}</h1>
-                            {{-- Llamamos la vista de errores --}}
-                            @include('dashboard.note.fragments._errors-form')
                             {{-- Crear la ruta del formulario y el metodo --}}
                             <form action="{{ route('dashboard.note.update', $note->id) }}" method="POST">
                                 @csrf

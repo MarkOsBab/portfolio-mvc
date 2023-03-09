@@ -22,7 +22,7 @@ Todos los puertos se pueden modificar en el archivo [docker-compose.yml](https:/
 
 Actualiza todos los paquetes de la aplicación. Dentro del contenedor de la aplicación correspondiente a la API ejecuta el comando ``` docker-compose exec app php artisan composer update ```
 
-Se deberá utilizar el comando php artisan migrate para ejecutar las migraciones de laravel.
+Se deberá utilizar el comando ``` php artisan migrate ``` para ejecutar las migraciones de laravel.
 
 De ser necesario, modifica la configuración correspondiente al entorno local .env.
 
