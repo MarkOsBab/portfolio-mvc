@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,17 +16,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web/index', ['title' => 'Home page']);
 });
 
-Route::middleware(['auth','verified'])->group(function(){
-    Route::get('/dashboard', [NoteController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard/note/show/{note}', [NoteController::class, 'show'])->name('dashboard.note.show');
-    Route::get('/dashboard/note/create', [NoteController::class, 'create'])->name('dashboard.note.create');
-    Route::post('/dashboard/note/store', [NoteController::class, 'store'])->name('dashboard.note.store');
-    Route::get('/dashboard/note/{note}/edit', [NoteController::class, 'edit'])->name('dashboard.note.edit');
-    Route::put('/dashboard/note/{note}/update', [NoteController::class, 'update'])->name('dashboard.note.update');
-    Route::delete('/dashboard/note/{note}', [NoteController::class, 'destroy'])->name('dashboard.note.destroy');
+Route::get('/dashboard', function() {
+    return view('dashboard.index', ['title' => 'Dashboard home']);
+})->name('dashboard')
+  ->middleware('auth');
+
+
+// Proyects
+Route::group([
+    'prefix' => '/dashboard/projects',
+    'middleware' => 'auth'
+], function() {
+    Route::controller(ProjectController::class)->group(function(){
+        Route::get('/', 'index')->name('projects.index');
+        Route::get('/create', 'create')->name('projects.create');
+        Route::post('/', 'store')->name('projects.store');
+        Route::get('/{id}/edit', 'edit')->name('projects.edit');
+        Route::put('/{id}', 'update')->name('projects.update');
+        Route::delete('/{id}', 'destroy')->name('projects.destroy');
+    });
 });
 
 

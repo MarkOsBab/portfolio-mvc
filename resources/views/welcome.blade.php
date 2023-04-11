@@ -9,7 +9,7 @@
 </head>
 <body class="bg-gray-900 flex justify-center items-center h-screen">
     <div class="bg-white p-8 rounded-md shadow-md">
-      <h1 class="text-2xl mb-4">Technicial test Marcos</h1>
+      <h1 class="text-2xl mb-4">Portfolio Login</h1>
       <div class="flex justify-between">
         <a href="/login" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Login</a>
       <a href="/register" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Register</a>

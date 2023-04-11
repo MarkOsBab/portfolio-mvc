@@ -1,0 +1,9 @@
+.d-flex .col-1 {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.active {
+    border-radius: 0 !important;
+}
