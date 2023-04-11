@@ -2,12 +2,15 @@
 @section('container')
 
 <div class="container-fluid">
-    <h1>Formulario de edición</h1>
+    <div class="mt-3 d-flex flex-wrap-reverse justify-content-between align-items-center">
+        <h1>Formulario de edición</h1>
+        <a href="{{ route('projects.index') }}" class="btn btn-primary"><i class="fa-solid fa-caret-left"></i> Volver</a>
+    </div>
     <!-- Formulario de edición -->
     <form method="POST" action="{{ route('projects.update', $project->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        @include('dashboard.project.fragments._errors-form')
+        @include('dashboard.fragments._errors-form')
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="name" name="name" required value="{{ $project->name }}">

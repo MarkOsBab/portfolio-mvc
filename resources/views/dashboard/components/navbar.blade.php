@@ -17,8 +17,13 @@
             </a>
           </li>
           <li class="nav-item d-md-none d-sm-block">
-            <a class="nav-link" href="{{route('projects.index')}}">
+            <a class="nav-link" href="{{route('services.index')}}">
               Servicios
+            </a>
+          </li>
+          <li class="nav-item d-md-none d-sm-block">
+            <a class="nav-link" href="{{route('news.index')}}">
+              Noticias
             </a>
           </li>
           <li class="nav-item d-md-none d-sm-block">

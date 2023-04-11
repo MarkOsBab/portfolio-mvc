@@ -3,13 +3,13 @@
 <div class="container-fluid">
     <div class="mt-3 d-flex flex-wrap-reverse justify-content-between align-items-center">
         <h1>Formulario de creación</h1>
-        <a href="{{ route('projects.index') }}" class="btn btn-primary"><i class="fa-solid fa-caret-left"></i> Volver</a>
+        <a href="{{ route('services.index') }}" class="btn btn-primary"><i class="fa-solid fa-caret-left"></i> Volver</a>
     </div>
     @if (session('error'))
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
     <!-- Formulario de creación -->
-    <form method="POST" action="{{ route('projects.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('services.store') }}" enctype="multipart/form-data">
         @csrf
         @include('dashboard.fragments._errors-form')
         <div class="mb-3">
@@ -20,22 +20,22 @@
             <label for="description" class="form-label">Descripción</label>
             <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
         </div>
-        <div class="mb-3">
-            <label for="start_date">Fecha de inicio</label>
-            <input type="date" class="form-control datepicker" id="start_date" name="start_date">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="visible">Visibilidad</label>
+            <select class="form-select" id="visible" name="visible">
+              <option selected>Seleccionar...</option>
+              <option value="1">Visible</option>
+              <option value="0">No visible</option>
+            </select>
         </div>
         <div class="mb-3">
-            <label for="end_date">Fecha de finalización</label>
-            <input type="date" class="form-control" id="end_date" name="end_date">
+            <label for="cost_range" class="form-label">Rango de costos</label>
+            <input type="text" name="cost_range" id="cost_range" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="link">Enlace</label>
-            <input type="text" class="form-control" id="link" name="link">
-        </div>
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Imágenes</label>
-            <input class="form-control" type="file" id="formFile" name="images[]" accept="image/*" multiple required>
-        </div>
+            <label for="formFile" class="form-label">Miniatura</label>
+            <input class="form-control" type="file" id="formFile" name="thumbnail" accept="image/*" required>
+          </div>
         <button type="submit" class="btn btn-primary mt-3 mb-3">Guardar</button>
     </form>
 </div>
