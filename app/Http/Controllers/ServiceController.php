@@ -115,7 +115,7 @@ class ServiceController extends Controller
         Storage::delete('images/services/'.$service->thumbnail);
         $service->delete();
 
-        $status = "El servicio $serviceName ha sido eliminado.";
+        $status = "El servicio '$serviceName' ha sido eliminado.";
 
         return redirect('dashboard/services')->with(compact('status'));
     }

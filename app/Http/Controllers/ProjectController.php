@@ -165,7 +165,7 @@ class ProjectController extends Controller
 
         $project->delete();
 
-        $status = "El proyecto $projectName ha sido eliminado.";
+        $status = "El proyecto '$projectName' ha sido eliminado.";
         return redirect()->route('projects.index')->with(compact('status'));
     }
 }

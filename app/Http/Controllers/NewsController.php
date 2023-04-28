@@ -160,7 +160,7 @@ class NewsController extends Controller
 
         $news->delete();
 
-        $status = "La noticia $newsName ha sido eliminado.";
+        $status = "La noticia '$newsName' ha sido eliminado.";
         return redirect()->route('news.index')->with(compact('status'));
     }
 }

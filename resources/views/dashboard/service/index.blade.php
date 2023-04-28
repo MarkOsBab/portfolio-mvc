@@ -1,5 +1,6 @@
 @extends('dashboard.index')
 @section('container')
+@include('dashboard.components.stats')
     <div class="p-3">
         <div class="container-fluid">
             <h1>Servicios</h1>

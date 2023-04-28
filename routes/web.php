@@ -4,6 +4,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,23 @@ Route::get('/', function () {
     return view('web/index', ['title' => 'Home page']);
 });
 
-Route::get('/dashboard', function() {
-    return view('dashboard.index', ['title' => 'Dashboard home']);
-})->name('dashboard')
-  ->middleware('auth');
+Route::get('/dashboard', [TagController::class, 'index'])
+    ->name('dashboard')
+    ->middleware('auth');
+
+//Tags
+Route::group([
+    'prefix' => '/dashboard/tags',
+    'middleware' => 'auth'
+], function() {
+    Route::controller(TagController::class)->group(function() {
+        Route::get('/create', 'create')->name('tags.create');
+        Route::post('/', 'store')->name('tags.store');
+        Route::get('/{id}/edit', 'edit')->name('tags.edit');
+        Route::put('/{id}', 'update')->name('tags.update');
+        Route::delete('/{id}', 'destroy')->name('tags.destroy');
+    });
+});
 
 
 // Proyects

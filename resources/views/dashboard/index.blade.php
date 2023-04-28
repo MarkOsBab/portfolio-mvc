@@ -6,8 +6,8 @@
         <div class="col-1 d-none d-lg-block d-xl-block">
             @include('dashboard.components.aside')
         </div>
-        <div class="col">
-            @yield('container') 
+        <div class="col container-fluid">
+            @yield('container')
         </div>
     </div>
 </main>
