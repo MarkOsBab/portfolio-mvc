@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\TaggableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,6 +82,16 @@ Route::group([
         Route::get('/{id}/edit', 'edit')->name('news.edit');
         Route::put('/{id}', 'update')->name('news.update');
         Route::delete('/{id}', 'destroy')->name('news.destroy');
+    });
+});
+
+Route::group([
+    'prefix' => '/dashboard/taggable',
+    'middleware' => 'auth',
+], function() {
+    Route::controller(TaggableController::class)->group(function(){
+        Route::get('/{taggableType}/id/{taggableId}', 'create')->name('taggable.create');
+        Route::post('/{taggableType}/id/{taggableId}', 'store')->name('taggable.store');
     });
 });
 

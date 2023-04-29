@@ -8,4 +8,21 @@
     border-radius: 0 !important;
 }
 
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #5897fb !important;
+    color: black !important;
+}
 
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.select2-container--default .select2-results__option[aria-selected=false] {
+    background-color: #fff;
+    color: #000;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: #000;
+}

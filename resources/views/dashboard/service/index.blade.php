@@ -54,6 +54,11 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a class="dropdown-item" href="{{route('taggable.create', ['taggableType' => 'services', 'taggableId' => $item->id])}}">
+                                            <i class="fa-solid fa-tags"></i> Etiquetas
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a class="dropdown-item" href="{{route('services.edit', $item->id)}}">
                                             <i class="fa-solid fa-pen-to-square text-info"></i> Editar
                                         </a>

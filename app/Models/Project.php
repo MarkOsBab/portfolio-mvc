@@ -21,4 +21,10 @@ class Project extends Model
     {
         return $this->hasMany(ProjectImage::class, 'project_id', 'id');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'taggable', 'taggable_id', 'tag_id')
+                    ->where('taggable_type', 'projects');
+    }
 }

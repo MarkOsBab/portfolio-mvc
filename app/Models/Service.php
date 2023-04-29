@@ -17,4 +17,10 @@ class Service extends Model
         'thumbnail',
         'cost_range'
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'taggable', 'taggable_id', 'tag_id')
+                    ->where('taggable_type', 'services');
+    }
 }

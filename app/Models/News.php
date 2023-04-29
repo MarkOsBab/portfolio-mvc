@@ -19,4 +19,10 @@ class News extends Model
     {
         return $this->hasMany(NewsImage::class, 'news_id', 'id');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'taggable', 'taggable_id', 'tag_id')
+                    ->where('taggable_type', 'news');
+    }
 }
