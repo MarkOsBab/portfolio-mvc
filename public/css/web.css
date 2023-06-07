@@ -1,0 +1,305 @@
+/* Estilos generales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el navbar */
+main header {
+    background-color: #ffffff;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+main section {
+    display: block;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.navbar-logo a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    color: #2b2b2b;
+}
+
+.navbar-logo img {
+    width: 100%;
+    max-width: 50px;
+}
+
+.navbar-logo h5 {
+    font-size: 30px;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu li {
+    margin-left: 15px;
+    display: block;
+    text-align: center;
+    height: 100%;
+    transition: all ease-in-out .3s;
+}
+
+.navbar-menu li a {
+    color: #2b2b2b;
+    text-decoration: none;
+    transition: border .3s;
+    border: none;
+    position: relative;
+}
+
+.navbar-menu li a:hover {
+    color: #1a1a1a;
+    border: none;
+}
+
+.navbar-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 50%;
+    bottom: -2px;
+    background-color: #1c7dcc;
+    transition: all ease-in-out .3s;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Estilos para el menú hamburguesa */
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 3px 0;
+}
+
+/* Estilos para hacer el navbar responsive */
+@media (max-width: 850px) {
+    .navbar-logo img {
+        width: 100%;
+        max-width: 35px;
+    }
+
+    .navbar-logo h5 {
+        font-size: 20px;
+    }
+
+    .navbar-menu li a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    main header {
+        position: fixed;
+    }
+    main section {
+        padding-top: 5rem;
+    }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 4px;
+        margin: 0;
+    }
+
+    .navbar-menu li {
+        margin-top: 15px;
+    }
+
+    .navbar-menu li a::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 2px;
+        left: 50%;
+        bottom: -3px;
+        background-color: #1c7dcc;
+        transition: all ease-in-out .3s;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu.closed {
+        display: flex;
+        transition: all ease-in-out .3s;
+    }
+
+    .navbar-hamburger {
+        display: flex;
+    }
+}
+
+#aboutUs {
+    margin: 0 auto;
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#aboutUs .content {
+    background-image: url('../images/resources/aboutMe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+    background-position: bottom;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#aboutUs .content .item {
+    background-color: #f2f2f2;
+    margin: 10px;
+    width: 100%;
+    max-width: 380px;
+    height: 80%;
+    padding: 0 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 100px;
+    box-shadow: none;
+    transition: box-shadow 1.3s ease-in-out;
+    position: relative;
+}
+
+#aboutUs .content .item::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 25px; /* Centrado horizontal */
+    border-left: 18px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 41px solid #f2f2f2;
+    transform: translateY(-100%); /* Mover arriba */
+}
+
+#aboutUs .content .item.animate-shadow {
+    box-shadow: rgba(255, 255, 255, 0.4) -5px 5px, rgba(255, 255, 255, 0.3) -10px 10px, rgba(255, 255, 255, 0.2) -15px 15px, rgba(255, 255, 255, 0.1) -20px 20px, rgba(255, 255, 255, 0.05) -25px 25px;
+}
+
+#aboutUs .content .item .header {
+    text-align: center;
+}
+
+#aboutUs .content .item h1 {
+    font-size: 2.2rem;
+}
+
+#aboutUs .content .item h1 span {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #1c7dcc;
+}
+
+#aboutUs .content .item h5 {
+    color: #747474;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#aboutUs .content .item h5::before,
+#aboutUs .content .item h5::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background-color: #747474;
+}
+
+#aboutUs .content .item h5::before {
+    left: -40px;
+}
+
+#aboutUs .content .item h5::after {
+    right: -40px;
+}
+
+@media (max-width: 768px) {
+    #aboutUs .content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 50px;
+      background-position: unset;
+    }
+
+    #aboutUs .content .item .header {
+        text-align: center;
+    }
+
+    #aboutUs .content .item {
+        margin: 10px auto;
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        padding: 20px;
+        text-align: left;
+    }
+
+    #aboutUs .content .item h5::before,
+    #aboutUs .content .item h5::after {
+        display: none;
+    }
+
+    #aboutUs .content .item::before {
+        display: none;
+    }
+}
