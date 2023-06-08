@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TaggableController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web/index', ['title' => 'Home page']);
-});
+Route::get('/', [WebController::class, 'index'])
+    ->name('web');
 
 Route::get('/dashboard', [TagController::class, 'index'])
     ->name('dashboard')

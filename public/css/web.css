@@ -12,6 +12,30 @@ body {
     padding: 0;
 }
 
+.titles {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    transform: translateX(-14px);
+    transition: transform 200ms;
+}
+
+.titler:before {
+    content: '#';
+    display: inline-block;
+    width: 0.75em;
+    color: #1c7dcc;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.titles:hover {
+    transform: none;
+}
+
+.titles:hover::before {
+    opacity: 1;
+}
+
 /* Estilos para el navbar */
 main header {
     background-color: #ffffff;
@@ -302,4 +326,113 @@ nav {
     #aboutUs .content .item::before {
         display: none;
     }
+}
+
+#knowledge {
+    margin: 0 auto;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.knowledge-list {
+    flex: 1;
+    margin-top: 10px;
+}
+
+.knowledge-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.knowledge-list li {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 10rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #1c7dcc;
+}
+
+.knowledge-details {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.knowledge-info {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.knowledge-info div {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.knowledge-info div picture {
+    background-color: #e0e0e0;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.knowledge-info div picture img {
+    width: 100px;
+    margin: 10px;
+    height: auto;
+}
+
+.knowledge-info div h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: #2b2b2b;
+    text-transform: uppercase;
+}
+
+.knowledge-info p {
+    font-size: 17px;
+}
+
+.knowledge-info .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.knowledge-info .right .tags {
+    padding: 10px;
+    margin: 10px;
+    background-color: #2b2b2b;
+    border-radius: 13px;
+    color: #f2f2f2;
+}
+
+.knowledge-info .right .tags p {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#knowledge-info {
+    display: none;
+    padding-left: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin: 12px;
+    padding: 30px;
+    color: #2b2b2b;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }

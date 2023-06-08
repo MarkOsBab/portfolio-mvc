@@ -23,7 +23,7 @@
                 </div>
                 <ul class="navbar-menu">
                     <li><a href="#aboutUs">Acerca de</a></li>
-                    <li><a href="#">Conocimientos</a></li>
+                    <li><a href="knowladge">Conocimientos</a></li>
                     <li><a href="#">Proyectos</a></li>
                     <li><a href="#">Noticias</a></li>
                     <li><a href="#">Contacto</a></li>
@@ -36,7 +36,8 @@
             </nav>
         </header>
 
-        @include('web.components.about-us')
+        @include('web.pages.about-us')
+        @include('web.pages.knowladge')
     </main>
 
     <script src="{{asset('js/web.js')}}"></script>

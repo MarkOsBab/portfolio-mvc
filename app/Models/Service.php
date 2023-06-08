@@ -21,6 +21,17 @@ class Service extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'taggable', 'taggable_id', 'tag_id')
-                    ->where('taggable_type', 'services');
+            ->where('taggable_type', 'services');
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'thumbnail' => $this->thumbnail,
+            'tags' => $this->tags
+        ];
     }
 }
