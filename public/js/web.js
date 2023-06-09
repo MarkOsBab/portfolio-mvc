@@ -31,7 +31,11 @@ knowledgeList.forEach((item) => {
         <div class="right">
             <p>${info.description}</p>
             <div class="tags">
-                ${info.tags.map(tag => `<p class="titles">${tag.name}</p>`).join('')}
+            ${
+                info.tags.length > 0
+                  ? info.tags.map((tag) => `<p>${tag.name}</p>`).join('')
+                  : ''
+              }
             </div>
         </div>
         `;

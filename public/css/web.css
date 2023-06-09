@@ -12,30 +12,6 @@ body {
     padding: 0;
 }
 
-.titles {
-    font-family: 'Raleway', sans-serif;
-    position: relative;
-    transform: translateX(-14px);
-    transition: transform 200ms;
-}
-
-.titler:before {
-    content: '#';
-    display: inline-block;
-    width: 0.75em;
-    color: #1c7dcc;
-    opacity: 0;
-    transition: opacity 200ms;
-}
-
-.titles:hover {
-    transform: none;
-}
-
-.titles:hover::before {
-    opacity: 1;
-}
-
 /* Estilos para el navbar */
 main header {
     background-color: #ffffff;
@@ -329,8 +305,25 @@ nav {
 }
 
 #knowledge {
+    width: 100%;
+
+}
+
+#knowledge .container {
     margin: 0 auto;
     max-width: 1080px;
+    padding: 10px;
+}
+
+#knowledge .container h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    letter-spacing: -4px;
+    font-size: 4rem;
+    margin: 10px;
+}
+
+#knowledge .container .container-divider {
     display: grid;
     grid-template-columns: auto 1fr;
 }
@@ -414,17 +407,21 @@ nav {
 }
 
 .knowledge-info .right .tags {
-    padding: 10px;
-    margin: 10px;
-    background-color: #2b2b2b;
-    border-radius: 13px;
-    color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
 }
 
 .knowledge-info .right .tags p {
     font-family: 'Roboto', sans-serif;
+    background-color: #1c7dcc;
+    border-radius: 13px;
+    color: #f2f2f2;
+    padding: 10px;
 }
-
 
 #knowledge-info {
     display: none;
